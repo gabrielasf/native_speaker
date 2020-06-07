@@ -1,16 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, TouchableWithoutFeedback, Image } from 'react-native';
 import {globalStyles} from '../styles/globalStyle';
 
-export default function Home() {
+export default function Home({ navigation }) {
     
-        return (
-            <View style= {globalStyles.container}>
-                <Text style={globalStyles.appName }>Native Speaker</Text>
-                <Text style = {globalStyles.slogan}>Level up your language skills</Text>
-            </View>
+    const changePage = () => {
+        navigation.navigate('Register');
+    }
+
+    return (
+        <TouchableWithoutFeedback onPress={changePage}>
+        <View style={globalStyles.welcome}>
+            <View style={globalStyles.image}>
+            <Image source={require('/Users/gabriela/solo_projects/react_native_app_test/react_native_challenge/assets/nativelogo.png')}/>
+                <Text style={globalStyles.title}>Native Speaker</Text>
+                <Text style={globalStyles.slogan}>Level Up your language skills</Text>
+                </View>
+        </View></TouchableWithoutFeedback>
         )
     
 }
+
 
 
