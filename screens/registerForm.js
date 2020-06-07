@@ -2,20 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import {globalStyles} from '../styles/globalStyle';
 import { Formik } from 'formik';
-import { useFormik} from 'formik';
-import Header from '../styles/header';
-import { render } from 'react-dom';
 
 
-export default function Register(){
-    return (
-        <View>
-                <Header />
-        <View style={globalStyles.container2}>
-            
-            </View>
-                    <Formik 
-                        initialValues={{
+export default function RegisterForm(){
+    return(
+        <View style={globalStyles.container}>
+            <Formik 
+                    initialValues={{
                         email: '', 
                         password:'', 
                         name:'', 
@@ -23,14 +16,14 @@ export default function Register(){
                         phone:'', 
                         taxNumber:''
                     }}
-                        onSubmit={(values) =>{
+                    onSubmit={(values) =>{
                         console.log("values");
 
                     }}
-                    >
+                >
                 
                     {(props) => ( 
-                    <View >
+                    <View>
                         <TextInput 
                             style={globalStyles.input}
                             placeholder='Email'
@@ -68,20 +61,15 @@ export default function Register(){
                             onChangeText={props.handleChange('taxNumber')}
                             value={props.values.taxNumber}
                         />
-                        <View style={globalStyles.registerButton}>
-                        <Button title="Register"  onPress={props.handleSubmit}>Register</Button>
-                        </View>
-                    </View>
-                    )}
-                 </Formik> 
-                 </View>
-                 
+                        <Button text="Register" color="##252A37" onPress={props.handleSubmit}/>
 
-) 
+                    </View>)};
+
+                
+
+                </Formik>
+                </View>
+
+
+    )
 }
-
-
-               {/* </View> */}
-                {/* </View> */}
-//         );
-// }

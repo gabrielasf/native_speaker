@@ -12,7 +12,7 @@ export default function Home({ navigation }) {
         <TouchableWithoutFeedback onPress={changePage}>
         <View style={globalStyles.welcome}>
             <View style={globalStyles.image}>
-            <Image source={require('/Users/gabriela/solo_projects/react_native_app_test/react_native_challenge/assets/nativelogo.png')}/>
+            <Image source={require('../assets/nativelogo.png')}/>
                 <Text style={globalStyles.title}>Native Speaker</Text>
                 <Text style={globalStyles.slogan}>Level Up your language skills</Text>
                 </View>
