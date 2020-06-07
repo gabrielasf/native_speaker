@@ -40,21 +40,16 @@ export const globalStyles = StyleSheet.create({
         padding: 13,
         fontSize: 18,
         borderRadius: 6,
-       // marginBottom: 10,
         marginHorizontal: 10,
         margin: 3,
         justifyContent: 'center',
-    alignItems: 'center',
-    // marginBottom: 10,
-    // borderWidth: 1,
-    //borderColor: '#f2f2f2',
-    //padding: 10,
-    // borderRadius: 10,
-    //alignSelf: 'center',
+        alignItems: 'center',
+        fontFamily: 'Comfortaa-SemiBold'
    },
    registerButton : {
-       marginHorizontal: 80,
+       marginHorizontal: 120,
        padding: 10,
+       
    },
    container2 : {
     padding : 10,

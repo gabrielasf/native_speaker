@@ -40,7 +40,8 @@ export default function Register(){
                         <TextInput 
                             style={globalStyles.input}
                             placeholder='Password'
-                            type='Password'
+                            type='password'
+                            secureTextEntry={true}
                             onChangeText={props.handleChange('password')}
                             value={props.values.password}
                         />
@@ -69,7 +70,7 @@ export default function Register(){
                             value={props.values.taxNumber}
                         />
                         <View style={globalStyles.registerButton}>
-                        <Button title="Register"  onPress={props.handleSubmit}>Register</Button>
+                        <Button title="Register" color="#252A37" onPress={props.handleSubmit}>Register</Button>
                         </View>
                     </View>
                     )}
