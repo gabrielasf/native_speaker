@@ -5,8 +5,13 @@ import {globalStyles} from '../styles/globalStyle';
 export default function Home({ navigation }) {
     
     const changePage = () => {
-        navigation.navigate('Register');
+       navigation.navigate('Register');
     }
+        
+    setTimeout(() => {
+        navigation.navigate('Register'); 
+    }, 2000); 
+
 
     return (
         <TouchableWithoutFeedback onPress={changePage}>
@@ -21,5 +26,7 @@ export default function Home({ navigation }) {
     
 }
 
-
-
+// import Login from './Login'; // My next screen
+// ....
+// ....
+// const {navigate} = this.props.navigation;
