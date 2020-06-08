@@ -48,10 +48,7 @@ export const globalStyles = StyleSheet.create({
    },
    registerButton : {
        marginHorizontal: 150,
-       marginBottom: 6
-       //padding: 10,
-       //margin: 2
-       
+       marginBottom: 6 
    },
    viewinput : {
     flex: 1
@@ -60,5 +57,15 @@ export const globalStyles = StyleSheet.create({
        color: "crimson",
        textAlign: "center",
        fontFamily: "Comfortaa-Bold"
+   },
+   registrationText: {
+       color: '#333',
+       textAlign: 'center',
+       marginTop: 70,
+       margin: 5,
+       fontFamily: 'Comfortaa-Bold',
+       fontSize: 38,
+       
+        
    }
 });

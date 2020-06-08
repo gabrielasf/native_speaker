@@ -1,14 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {globalStyles} from '../styles/globalStyle';
-import infoDisplay from '../styles/header';
+import Header from '../styles/header';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-export default function Confirmation() {
+export default function Confirmation({navigation}) {
+
+        const changePage = () => {
+        navigation.navigate('Home');
+        }
     
         return (
-            <View style= {globalStyles.container}>
-                <Header />
-            </View>
+                <View>
+                    <TouchableWithoutFeedback onPress={changePage}>
+                        <View>
+                            <Header />
+                            <Text style={globalStyles.registrationText}>You were succesfully registered!</Text>
+                        </View>
+                    </TouchableWithoutFeedback>
+                </View>
         )
     
 }

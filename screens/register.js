@@ -20,7 +20,7 @@ const userSchema = yup.object({
 });
 
 
-export default function Register(){
+export default function Register({ navigation }){
 
     return (
         <View >
