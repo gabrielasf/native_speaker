@@ -37,22 +37,28 @@ export const globalStyles = StyleSheet.create({
     input: {
         borderWidth: 1,
         borderColor: '#333',
-        padding: 13,
-        fontSize: 18,
+        padding: 8,
+        fontSize: 14,
         borderRadius: 6,
         marginHorizontal: 10,
-        margin: 3,
+        marginTop: 4,
         justifyContent: 'center',
         alignItems: 'center',
         fontFamily: 'Comfortaa-SemiBold'
    },
    registerButton : {
-       marginHorizontal: 120,
-       padding: 10,
+       marginHorizontal: 150,
+       marginBottom: 6
+       //padding: 10,
+       //margin: 2
        
    },
-   container2 : {
-    padding : 10,
+   viewinput : {
     flex: 1
-},
+   },
+   errorText: {
+       color: "crimson",
+       textAlign: "center",
+       fontFamily: "Comfortaa-Bold"
+   }
 });
