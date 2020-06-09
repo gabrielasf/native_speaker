@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, TextInput, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { Text, View, Button, TextInput, TouchableWithoutFeedback, Keyboard, ScrollView} from 'react-native';
 import {globalStyles} from '../styles/globalStyle';
 import { Formik } from 'formik';
 import Header from '../styles/header';
@@ -22,24 +22,65 @@ export default function Register({ navigation }){
     return (
         <View >
             <View style={globalStyles.container2}>
-                
+            <ScrollView>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View>
                     <Header />
                 </View>
                 </TouchableWithoutFeedback>
-                    
+                   
                     <Formik 
                         initialValues = {{ email: '', password:'', name:'', surname:'', phone:'', taxNumber:''}}
                         validationSchema={userSchema}
-                        onSubmit={(values) => {
-                            navigation.navigate('Confirmation');
-                        console.log(values);
-                    }}
+                        // onSubmit={(values) => {
+                        //     navigation.navigate('Confirmation');
+                        // console.log(values);
+                    //}}
+
+        //     onSubmit = {(values) => {
+        //     fetch('https://a1476601-936f-44ad-9190-4bc1e989c33c.mock.pstmn.io/echo')
+        //     .then((response) => {
+        //         console.log(response, values);
+        //         //response.json()
+        //       })
+        //     //   .then((data) => {
+        //     //     console.log(data)
+        //     //})
+        //       .then(navigation.navigate('Confirmation'))
+        //     //   .catch((error) => {
+        //     //     console.error(error);
+        //     //   });
+        // }}
+
+
+        onSubmit = {() => {
+            var raw = "";
+
+            var requestOptions = {
+              method: 'POST',
+              body: raw,
+            };
+            
+            fetch("https://a1476601-936f-44ad-9190-4bc1e989c33c.mock.pstmn.io/echo", requestOptions)
+              .then(response => response.text())
+              .then(result => console.log(result))
+              .catch(error => console.log('error', error))
+              .then(navigation.navigate('Confirmation'));
+        
+        
+        
+        
+        
+        }}
+
+
+        
+
                     >
                     
                     {(props) => ( 
                     <View styles={globalStyles.viewinput} >
+                        
                         <TextInput 
                             style={globalStyles.input}
                             placeholder='Email'
@@ -56,14 +97,14 @@ export default function Register({ navigation }){
                             value={props.values.password}
                         />
                         <Text style={globalStyles.errorText}>{props.touched.password && props.errors.password}</Text>
-                      
+                        
                         <TextInput 
                             style={globalStyles.input}
                             placeholder='Name'
                             onChangeText={props.handleChange('name')}
                             value={props.values.name}
                         />
-                        <Text style={globalStyles.errorText}>{props.touched.name && props.errors.email}</Text>
+                        <Text style={globalStyles.errorText}>{props.touched.name && props.errors.name}</Text>
                       
                         <TextInput 
                             style={globalStyles.input}
@@ -90,17 +131,19 @@ export default function Register({ navigation }){
                             keyboardType="numeric"
                         />
                         <Text style={globalStyles.errorText}>{props.touched.taxNumber && props.errors.taxNumber}</Text>
-                      
+                        
+                        
                         <View style={globalStyles.registerButton}>
                             <Button title="Register" color="#252A37" onPress={props.handleSubmit}>Register</Button>
                         </View>
+                       
                     </View>
                     )}
                    
                  </Formik> 
-                
+                 </ScrollView>
             </View>
+            
         </View>
     ) 
 }
-
