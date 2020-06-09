@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { View, Button, TextInput } from 'react-native';
 import {globalStyles} from '../styles/globalStyle';
 import { Formik } from 'formik';
 
@@ -18,9 +18,8 @@ export default function RegisterForm(){
                     }}
                     onSubmit={(values) =>{
                         console.log("values");
-
-                    }}
-                >
+                     }}
+                    >
                 
                     {(props) => ( 
                     <View>
@@ -64,12 +63,8 @@ export default function RegisterForm(){
                         <Button text="Register" color="##252A37" onPress={props.handleSubmit}/>
 
                     </View>)};
-
                 
-
                 </Formik>
-                </View>
-
-
+        </View>
     )
 }

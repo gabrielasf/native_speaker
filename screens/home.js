@@ -23,10 +23,4 @@ export default function Home({ navigation }) {
                 </View>
         </View></TouchableWithoutFeedback>
         )
-    
 }
-
-// import Login from './Login'; // My next screen
-// ....
-// ....
-// const {navigate} = this.props.navigation;

@@ -22,65 +22,34 @@ export default function Register({ navigation }){
     return (
         <View >
             <View style={globalStyles.container2}>
-            <ScrollView>
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View>
-                    <Header />
-                </View>
-                </TouchableWithoutFeedback>
+                <ScrollView>
+                    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                        <View>
+                            <Header />
+                        </View>
+                    </TouchableWithoutFeedback>
                    
                     <Formik 
                         initialValues = {{ email: '', password:'', name:'', surname:'', phone:'', taxNumber:''}}
                         validationSchema={userSchema}
-                        // onSubmit={(values) => {
-                        //     navigation.navigate('Confirmation');
-                        // console.log(values);
-                    //}}
+                        onSubmit = {() => {
+                        var raw = "";
 
-        //     onSubmit = {(values) => {
-        //     fetch('https://a1476601-936f-44ad-9190-4bc1e989c33c.mock.pstmn.io/echo')
-        //     .then((response) => {
-        //         console.log(response, values);
-        //         //response.json()
-        //       })
-        //     //   .then((data) => {
-        //     //     console.log(data)
-        //     //})
-        //       .then(navigation.navigate('Confirmation'))
-        //     //   .catch((error) => {
-        //     //     console.error(error);
-        //     //   });
-        // }}
-
-
-        onSubmit = {() => {
-            var raw = "";
-
-            var requestOptions = {
-              method: 'POST',
-              body: raw,
-            };
-            
-            fetch("https://a1476601-936f-44ad-9190-4bc1e989c33c.mock.pstmn.io/echo", requestOptions)
-              .then(response => response.text())
-              .then(result => console.log(result))
-              .catch(error => console.log('error', error))
-              .then(navigation.navigate('Confirmation'));
-        
-        
-        
-        
-        
-        }}
-
-
-        
-
-                    >
+                        var requestOptions = {
+                        method: 'POST',
+                        body: raw,
+                        };
+                        fetch("https://a1476601-936f-44ad-9190-4bc1e989c33c.mock.pstmn.io/echo", requestOptions)
+                        .then(response => response.text())
+                        .then(result => console.log(result))
+                        .catch(error => console.log('error', error))
+                        .then(navigation.navigate('Confirmation'));
+                        }}
+                        >
                     
-                    {(props) => ( 
-                    <View styles={globalStyles.viewinput} >
-                        
+                        {(props) => ( 
+                        <View styles={globalStyles.viewinput} >
+                            
                         <TextInput 
                             style={globalStyles.input}
                             placeholder='Email'
@@ -136,14 +105,13 @@ export default function Register({ navigation }){
                         <View style={globalStyles.registerButton}>
                             <Button title="Register" color="#252A37" onPress={props.handleSubmit}>Register</Button>
                         </View>
-                       
                     </View>
                     )}
-                   
-                 </Formik> 
+                    </Formik> 
+                
                  </ScrollView>
             </View>
-            
+       
         </View>
     ) 
 }

@@ -15,7 +15,7 @@ export default function Confirmation({navigation}) {
                     <TouchableWithoutFeedback onPress={changePage}>
                         <View>
                             <Header />
-                            <Text style={globalStyles.registrationText}>You were succesfully registered!</Text>
+                            <Text style={globalStyles.registrationText}>You have successfully registered!</Text>
                         </View>
                     </TouchableWithoutFeedback>
                 </View>
