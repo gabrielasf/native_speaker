@@ -19,7 +19,6 @@ export default function NavStack() {
       </Stack.Navigator>
     </NavigationContainer>
     )
-
 }
 
 

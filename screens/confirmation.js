@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import {globalStyles} from '../styles/globalStyle';
 import Header from '../styles/header';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';

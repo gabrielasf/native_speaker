@@ -9,7 +9,7 @@ export default function Home({ navigation }) {
     }
         
     setTimeout(() => {
-        navigation.navigate('Register'); 
+        changePage(); 
     }, 2000); 
 
 
@@ -20,7 +20,8 @@ export default function Home({ navigation }) {
             <Image source={require('../assets/nativelogo.png')}/>
                 <Text style={globalStyles.title}>Native Speaker</Text>
                 <Text style={globalStyles.slogan}>Level Up your language skills</Text>
-                </View>
-        </View></TouchableWithoutFeedback>
+            </View>
+        </View>
+        </TouchableWithoutFeedback>
         )
 }
